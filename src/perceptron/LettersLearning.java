@@ -30,6 +30,7 @@ public class LettersLearning {
             }
         }
         System.out.println(sseMax);
+        System.out.println(LearningNeuron.test(neuronMax));
         System.out.println(neuronMax.weightsToString());
     }
 }
