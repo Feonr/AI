@@ -59,7 +59,7 @@ public class LearningNeuron {
             for (int i = 0; i < trainingData.length; i++) {
                 int targetOutput = trainingData[i][1][0];
 
-                System.out.println("Starting weights: " + neuron.weightsToString());
+//                System.out.println("Starting weights: " + neuron.weightsToString());
                 // Calculate weighted input
                 double weightedSum = 0;
                 for (int ii = 0; ii < trainingData[i][0].length; ii++) {
@@ -72,12 +72,12 @@ public class LearningNeuron {
                     output = 1;
                 }*/
                 output = activationFunction(weightedSum);
-                System.out.println("Target output: " + targetOutput + ", "
-                        + "Actual Output: " + output);
+//                System.out.println("Target output: " + targetOutput + ", "
+//                        + "Actual Output: " + output);
 
                 // Calculate error
                 double error = targetOutput - output;
-                System.out.println("Error " + error);
+//                System.out.println("Error " + error);
                 sse += error * error;
                 // Increase error count for incorrect output
                 if (error != 0) {
@@ -89,8 +89,8 @@ public class LearningNeuron {
                     neuron.addInputWeight(ii, learningRate * error * neuron.getInputData(ii));
                 }
 
-                System.out.println("New weights: " + neuron.weightsToString());
-                System.out.println();
+//                System.out.println("New weights: " + neuron.weightsToString());
+
             }
 
             // If there are no errors, stop
@@ -107,6 +107,7 @@ public class LearningNeuron {
         System.out.println("Final weights: " + neuron.weightsToString());
         neuron.sse = sse;
         System.out.println("sse " + neuron.sse);
+        System.out.println("mse "+neuron.sse/7000);
 
         return neuron;
     }
@@ -132,7 +133,7 @@ public class LearningNeuron {
                 /*if(threshold <= weightedSum){
                     output = 1;
                 }*/
-                output = activationFunction(weightedSum);
+                output = activationFunction2(weightedSum);
 
 
                 // Calculate error

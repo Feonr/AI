@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class LettersLearning {
     public static void main(String[] args) {
-        System.out.println("gdsfsf");
         ArtificialNeuron [] neurons=new ArtificialNeuron[100];
         for(int i=0;i<100;i++) {
             neurons[i] = new ArtificialNeuron();
@@ -29,8 +28,9 @@ public class LettersLearning {
                 neuronMax=neurons[j];
             }
         }
+        System.out.println("Best neuron "+neuronMax.weightsToString());
         System.out.println(sseMax);
-        System.out.println(LearningNeuron.test(neuronMax));
+        //System.out.println(LearningNeuron.test(neuronMax));
         System.out.println(neuronMax.weightsToString());
     }
 }
