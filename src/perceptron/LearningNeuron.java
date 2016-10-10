@@ -15,14 +15,14 @@ public class LearningNeuron {
 
         LearningNeuron.threshold = threshold;
     }
-
+    //public static double  ssee=0;
     public static void setLearningRate(double learningRate) {
         LearningNeuron.learningRate = learningRate;
     }
 
     private static int threshold=1;
 
-    static double learningRate=0.1;
+    static double learningRate=1;
     private static int[][][] trainingData = {
             {{0, 0,0}, {0}},
             {{0, 1,0}, {0}},
@@ -46,7 +46,8 @@ public class LearningNeuron {
         return weightedSum;
     }
     public static ArtificialNeuron learn(ArtificialNeuron neuron) {
-        neuron.addInput(3);
+       // neuron.addInput(3);
+
         double sse=0;
         int counter=0;
         while(counter<(int)(7000/trainingData.length)){
@@ -101,7 +102,9 @@ public class LearningNeuron {
         counter++;
         }
         System.out.println("Final weights: " + neuron.weightsToString());
-        System.out.println("sse "+sse);
+        neuron.sse=sse;
+        System.out.println("sse "+neuron.sse);
+
         return neuron;
     }
 }

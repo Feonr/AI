@@ -8,6 +8,7 @@ public class ArtificialNeuron
     private List<Double> Dendrites;
     private List<Double> Synapses;
 
+    public double sse=0;
 
     public ArtificialNeuron()
     {
@@ -78,7 +79,7 @@ public class ArtificialNeuron
         Synapses.set(index,beforeValue+addition);
     }
     public String weightsToString(){
-        String weights=new String();
+        String weights="";
         for (double item:Synapses) {
             weights+=" "+item;
         }
